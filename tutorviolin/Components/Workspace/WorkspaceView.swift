@@ -9,10 +9,26 @@ import SwiftUI
 
 struct WorkspaceView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Text("My Workspaces")
+                .font(.title)
+                .padding()
+            
+            Spacer()
+            
+            Text("Add your first workspace")
+                .foregroundColor(.gray)
+            
+            Button(action: {}) {
+                Label("New Workspace", systemImage: "plus.circle.fill")
+                    .padding()
+                    .background(Color.blue)
+                    .foregroundColor(.white)
+                    .cornerRadius(10)
+            }
+            .padding()
+            
+            Spacer()
+        }
     }
-}
-
-#Preview {
-    WorkspaceView()
 }

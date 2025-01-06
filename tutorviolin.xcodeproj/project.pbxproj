@@ -12,6 +12,10 @@
 		232DBC8C2D2C10B100CEEF2B /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232DBC8B2D2C10B100CEEF2B /* Item.swift */; };
 		232DBC8E2D2C10B200CEEF2B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 232DBC8D2D2C10B200CEEF2B /* Assets.xcassets */; };
 		232DBC922D2C10B200CEEF2B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 232DBC912D2C10B200CEEF2B /* Preview Assets.xcassets */; };
+		232DBC9F2D2C10FD00CEEF2B /* WorkspaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232DBC9E2D2C10FD00CEEF2B /* WorkspaceView.swift */; };
+		232DBCA42D2C114400CEEF2B /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232DBCA32D2C114400CEEF2B /* InputView.swift */; };
+		232DBCA62D2C114B00CEEF2B /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232DBCA52D2C114B00CEEF2B /* LoginView.swift */; };
+		232DBCA82D2C115100CEEF2B /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232DBCA72D2C115100CEEF2B /* RegisterView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,10 @@
 		232DBC8D2D2C10B200CEEF2B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		232DBC8F2D2C10B200CEEF2B /* tutorviolin.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = tutorviolin.entitlements; sourceTree = "<group>"; };
 		232DBC912D2C10B200CEEF2B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		232DBC9E2D2C10FD00CEEF2B /* WorkspaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkspaceView.swift; sourceTree = "<group>"; };
+		232DBCA32D2C114400CEEF2B /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
+		232DBCA52D2C114B00CEEF2B /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		232DBCA72D2C115100CEEF2B /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,8 +62,12 @@
 		232DBC862D2C10B100CEEF2B /* tutorviolin */ = {
 			isa = PBXGroup;
 			children = (
+				232DBCA22D2C113600CEEF2B /* Authentication */,
+				232DBCA12D2C112800CEEF2B /* Root */,
+				232DBC9B2D2C10E800CEEF2B /* Components */,
+				232DBC9A2D2C10E300CEEF2B /* Core */,
+				232DBC982D2C10D300CEEF2B /* Model */,
 				232DBC872D2C10B100CEEF2B /* tutorviolinApp.swift */,
-				232DBC892D2C10B100CEEF2B /* ContentView.swift */,
 				232DBC8B2D2C10B100CEEF2B /* Item.swift */,
 				232DBC8D2D2C10B200CEEF2B /* Assets.xcassets */,
 				232DBC8F2D2C10B200CEEF2B /* tutorviolin.entitlements */,
@@ -70,6 +82,54 @@
 				232DBC912D2C10B200CEEF2B /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		232DBC982D2C10D300CEEF2B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		232DBC9A2D2C10E300CEEF2B /* Core */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		232DBC9B2D2C10E800CEEF2B /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				232DBC9C2D2C10EE00CEEF2B /* Workspace */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		232DBC9C2D2C10EE00CEEF2B /* Workspace */ = {
+			isa = PBXGroup;
+			children = (
+				232DBC9E2D2C10FD00CEEF2B /* WorkspaceView.swift */,
+			);
+			path = Workspace;
+			sourceTree = "<group>";
+		};
+		232DBCA12D2C112800CEEF2B /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				232DBC892D2C10B100CEEF2B /* ContentView.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		232DBCA22D2C113600CEEF2B /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				232DBCA32D2C114400CEEF2B /* InputView.swift */,
+				232DBCA52D2C114B00CEEF2B /* LoginView.swift */,
+				232DBCA72D2C115100CEEF2B /* RegisterView.swift */,
+			);
+			path = Authentication;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,7 +202,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				232DBCA62D2C114B00CEEF2B /* LoginView.swift in Sources */,
+				232DBC9F2D2C10FD00CEEF2B /* WorkspaceView.swift in Sources */,
 				232DBC8A2D2C10B100CEEF2B /* ContentView.swift in Sources */,
+				232DBCA82D2C115100CEEF2B /* RegisterView.swift in Sources */,
+				232DBCA42D2C114400CEEF2B /* InputView.swift in Sources */,
 				232DBC8C2D2C10B100CEEF2B /* Item.swift in Sources */,
 				232DBC882D2C10B100CEEF2B /* tutorviolinApp.swift in Sources */,
 			);
