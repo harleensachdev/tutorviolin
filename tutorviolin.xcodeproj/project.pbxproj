@@ -16,6 +16,23 @@
 		232DBCA42D2C114400CEEF2B /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232DBCA32D2C114400CEEF2B /* InputView.swift */; };
 		232DBCA62D2C114B00CEEF2B /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232DBCA52D2C114B00CEEF2B /* LoginView.swift */; };
 		232DBCA82D2C115100CEEF2B /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232DBCA72D2C115100CEEF2B /* RegisterView.swift */; };
+		232DBCB22D2D237300CEEF2B /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 232DBCB02D2D236700CEEF2B /* AudioToolbox.framework */; };
+		232DBCB52D2D237500CEEF2B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 232DBCAE2D2D236000CEEF2B /* AVFoundation.framework */; };
+		232DBCC42D2D243000CEEF2B /* ScoreAudioEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232DBCC32D2D243000CEEF2B /* ScoreAudioEngine.swift */; };
+		232DBCCB2D2D257300CEEF2B /* ScoreEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232DBCCA2D2D257300CEEF2B /* ScoreEditorView.swift */; };
+		232DBCCF2D2D264900CEEF2B /* WorkspaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232DBCCE2D2D264900CEEF2B /* WorkspaceModel.swift */; };
+		232DBCD12D2D268000CEEF2B /* KeySignatureSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232DBCD02D2D268000CEEF2B /* KeySignatureSelector.swift */; };
+		232DBCD32D2D269200CEEF2B /* TimeSignatureSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232DBCD22D2D269200CEEF2B /* TimeSignatureSelector.swift */; };
+		232DBCD72D2D26CA00CEEF2B /* PlaybackControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232DBCD62D2D26CA00CEEF2B /* PlaybackControls.swift */; };
+		232DBCD92D2D26DB00CEEF2B /* PianoKeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232DBCD82D2D26DB00CEEF2B /* PianoKeyboardView.swift */; };
+		232DBCDB2D2D26F900CEEF2B /* StaffView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232DBCDA2D2D26F900CEEF2B /* StaffView.swift */; };
+		232DBCDE2D2D2ADA00CEEF2B /* Clef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232DBCDD2D2D2ADA00CEEF2B /* Clef.swift */; };
+		232DBCE02D2D2B4F00CEEF2B /* KeySignature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232DBCDF2D2D2B4F00CEEF2B /* KeySignature.swift */; };
+		232DBCE22D2D2B7100CEEF2B /* KeySignatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232DBCE12D2D2B7100CEEF2B /* KeySignatureView.swift */; };
+		232DBCEC2D2D36C600CEEF2B /* MusicalNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232DBCEB2D2D36C600CEEF2B /* MusicalNote.swift */; };
+		232DBCEE2D2D36D400CEEF2B /* NoteDuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232DBCED2D2D36D400CEEF2B /* NoteDuration.swift */; };
+		232DBCF02D2D370100CEEF2B /* TimeSignature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232DBCEF2D2D370100CEEF2B /* TimeSignature.swift */; };
+		232DBCF22D2D371D00CEEF2B /* NoteDurationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232DBCF12D2D371D00CEEF2B /* NoteDurationButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +47,23 @@
 		232DBCA32D2C114400CEEF2B /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
 		232DBCA52D2C114B00CEEF2B /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		232DBCA72D2C115100CEEF2B /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		232DBCAE2D2D236000CEEF2B /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.2.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
+		232DBCB02D2D236700CEEF2B /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.2.sdk/System/Library/Frameworks/AudioToolbox.framework; sourceTree = DEVELOPER_DIR; };
+		232DBCC32D2D243000CEEF2B /* ScoreAudioEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreAudioEngine.swift; sourceTree = "<group>"; };
+		232DBCCA2D2D257300CEEF2B /* ScoreEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreEditorView.swift; sourceTree = "<group>"; };
+		232DBCCE2D2D264900CEEF2B /* WorkspaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkspaceModel.swift; sourceTree = "<group>"; };
+		232DBCD02D2D268000CEEF2B /* KeySignatureSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeySignatureSelector.swift; sourceTree = "<group>"; };
+		232DBCD22D2D269200CEEF2B /* TimeSignatureSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSignatureSelector.swift; sourceTree = "<group>"; };
+		232DBCD62D2D26CA00CEEF2B /* PlaybackControls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybackControls.swift; sourceTree = "<group>"; };
+		232DBCD82D2D26DB00CEEF2B /* PianoKeyboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PianoKeyboardView.swift; sourceTree = "<group>"; };
+		232DBCDA2D2D26F900CEEF2B /* StaffView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaffView.swift; sourceTree = "<group>"; };
+		232DBCDD2D2D2ADA00CEEF2B /* Clef.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clef.swift; sourceTree = "<group>"; };
+		232DBCDF2D2D2B4F00CEEF2B /* KeySignature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeySignature.swift; sourceTree = "<group>"; };
+		232DBCE12D2D2B7100CEEF2B /* KeySignatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeySignatureView.swift; sourceTree = "<group>"; };
+		232DBCEB2D2D36C600CEEF2B /* MusicalNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicalNote.swift; sourceTree = "<group>"; };
+		232DBCED2D2D36D400CEEF2B /* NoteDuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDuration.swift; sourceTree = "<group>"; };
+		232DBCEF2D2D370100CEEF2B /* TimeSignature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSignature.swift; sourceTree = "<group>"; };
+		232DBCF12D2D371D00CEEF2B /* NoteDurationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDurationButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +71,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				232DBCB52D2D237500CEEF2B /* AVFoundation.framework in Frameworks */,
+				232DBCB22D2D237300CEEF2B /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -48,6 +84,7 @@
 			children = (
 				232DBC862D2C10B100CEEF2B /* tutorviolin */,
 				232DBC852D2C10B100CEEF2B /* Products */,
+				232DBCAD2D2D235F00CEEF2B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,11 +99,11 @@
 		232DBC862D2C10B100CEEF2B /* tutorviolin */ = {
 			isa = PBXGroup;
 			children = (
+				232DBC9C2D2C10EE00CEEF2B /* Workspace */,
 				232DBCA22D2C113600CEEF2B /* Authentication */,
+				232DBCE62D2D34C100CEEF2B /* ScoreDisplay  */,
+				232DBCC02D2D241200CEEF2B /* Services */,
 				232DBCA12D2C112800CEEF2B /* Root */,
-				232DBC9B2D2C10E800CEEF2B /* Components */,
-				232DBC9A2D2C10E300CEEF2B /* Core */,
-				232DBC982D2C10D300CEEF2B /* Model */,
 				232DBC872D2C10B100CEEF2B /* tutorviolinApp.swift */,
 				232DBC8B2D2C10B100CEEF2B /* Item.swift */,
 				232DBC8D2D2C10B200CEEF2B /* Assets.xcassets */,
@@ -84,32 +121,11 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		232DBC982D2C10D300CEEF2B /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		232DBC9A2D2C10E300CEEF2B /* Core */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Core;
-			sourceTree = "<group>";
-		};
-		232DBC9B2D2C10E800CEEF2B /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				232DBC9C2D2C10EE00CEEF2B /* Workspace */,
-			);
-			path = Components;
-			sourceTree = "<group>";
-		};
 		232DBC9C2D2C10EE00CEEF2B /* Workspace */ = {
 			isa = PBXGroup;
 			children = (
 				232DBC9E2D2C10FD00CEEF2B /* WorkspaceView.swift */,
+				232DBCCE2D2D264900CEEF2B /* WorkspaceModel.swift */,
 			);
 			path = Workspace;
 			sourceTree = "<group>";
@@ -130,6 +146,123 @@
 				232DBCA72D2C115100CEEF2B /* RegisterView.swift */,
 			);
 			path = Authentication;
+			sourceTree = "<group>";
+		};
+		232DBCAD2D2D235F00CEEF2B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				232DBCB02D2D236700CEEF2B /* AudioToolbox.framework */,
+				232DBCAE2D2D236000CEEF2B /* AVFoundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		232DBCC02D2D241200CEEF2B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				232DBCC22D2D242100CEEF2B /* AudioEngine */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		232DBCC22D2D242100CEEF2B /* AudioEngine */ = {
+			isa = PBXGroup;
+			children = (
+				232DBCC32D2D243000CEEF2B /* ScoreAudioEngine.swift */,
+			);
+			path = AudioEngine;
+			sourceTree = "<group>";
+		};
+		232DBCC92D2D255D00CEEF2B /* ScoreInterfaceView */ = {
+			isa = PBXGroup;
+			children = (
+				232DBCCA2D2D257300CEEF2B /* ScoreEditorView.swift */,
+				232DBCD62D2D26CA00CEEF2B /* PlaybackControls.swift */,
+				232DBCD82D2D26DB00CEEF2B /* PianoKeyboardView.swift */,
+				232DBCDA2D2D26F900CEEF2B /* StaffView.swift */,
+			);
+			path = ScoreInterfaceView;
+			sourceTree = "<group>";
+		};
+		232DBCDC2D2D2AC800CEEF2B /* Signature */ = {
+			isa = PBXGroup;
+			children = (
+				232DBCF62D2D383C00CEEF2B /* TimeSignature */,
+				232DBCE32D2D2E7B00CEEF2B /* KeySignature */,
+				232DBCDD2D2D2ADA00CEEF2B /* Clef.swift */,
+			);
+			path = Signature;
+			sourceTree = "<group>";
+		};
+		232DBCE32D2D2E7B00CEEF2B /* KeySignature */ = {
+			isa = PBXGroup;
+			children = (
+				232DBCF52D2D382D00CEEF2B /* KeySignatureView */,
+				232DBCF42D2D382100CEEF2B /* KeySignatureModels */,
+			);
+			path = KeySignature;
+			sourceTree = "<group>";
+		};
+		232DBCE62D2D34C100CEEF2B /* ScoreDisplay  */ = {
+			isa = PBXGroup;
+			children = (
+				232DBCC92D2D255D00CEEF2B /* ScoreInterfaceView */,
+				232DBCDC2D2D2AC800CEEF2B /* Signature */,
+				232DBCF32D2D37A200CEEF2B /* NoteModels */,
+				232DBCF12D2D371D00CEEF2B /* NoteDurationButton.swift */,
+			);
+			path = "ScoreDisplay ";
+			sourceTree = "<group>";
+		};
+		232DBCF32D2D37A200CEEF2B /* NoteModels */ = {
+			isa = PBXGroup;
+			children = (
+				232DBCED2D2D36D400CEEF2B /* NoteDuration.swift */,
+				232DBCEB2D2D36C600CEEF2B /* MusicalNote.swift */,
+			);
+			path = NoteModels;
+			sourceTree = "<group>";
+		};
+		232DBCF42D2D382100CEEF2B /* KeySignatureModels */ = {
+			isa = PBXGroup;
+			children = (
+				232DBCD02D2D268000CEEF2B /* KeySignatureSelector.swift */,
+				232DBCDF2D2D2B4F00CEEF2B /* KeySignature.swift */,
+			);
+			path = KeySignatureModels;
+			sourceTree = "<group>";
+		};
+		232DBCF52D2D382D00CEEF2B /* KeySignatureView */ = {
+			isa = PBXGroup;
+			children = (
+				232DBCE12D2D2B7100CEEF2B /* KeySignatureView.swift */,
+			);
+			path = KeySignatureView;
+			sourceTree = "<group>";
+		};
+		232DBCF62D2D383C00CEEF2B /* TimeSignature */ = {
+			isa = PBXGroup;
+			children = (
+				232DBCF82D2D384B00CEEF2B /* TimeSignatureView */,
+				232DBCF72D2D384600CEEF2B /* TimeSignatureModel */,
+			);
+			path = TimeSignature;
+			sourceTree = "<group>";
+		};
+		232DBCF72D2D384600CEEF2B /* TimeSignatureModel */ = {
+			isa = PBXGroup;
+			children = (
+				232DBCD22D2D269200CEEF2B /* TimeSignatureSelector.swift */,
+				232DBCEF2D2D370100CEEF2B /* TimeSignature.swift */,
+			);
+			path = TimeSignatureModel;
+			sourceTree = "<group>";
+		};
+		232DBCF82D2D384B00CEEF2B /* TimeSignatureView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TimeSignatureView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,13 +335,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				232DBCE02D2D2B4F00CEEF2B /* KeySignature.swift in Sources */,
+				232DBCF22D2D371D00CEEF2B /* NoteDurationButton.swift in Sources */,
+				232DBCCF2D2D264900CEEF2B /* WorkspaceModel.swift in Sources */,
+				232DBCDB2D2D26F900CEEF2B /* StaffView.swift in Sources */,
+				232DBCDE2D2D2ADA00CEEF2B /* Clef.swift in Sources */,
+				232DBCD92D2D26DB00CEEF2B /* PianoKeyboardView.swift in Sources */,
 				232DBCA62D2C114B00CEEF2B /* LoginView.swift in Sources */,
+				232DBCEC2D2D36C600CEEF2B /* MusicalNote.swift in Sources */,
+				232DBCCB2D2D257300CEEF2B /* ScoreEditorView.swift in Sources */,
+				232DBCD72D2D26CA00CEEF2B /* PlaybackControls.swift in Sources */,
+				232DBCEE2D2D36D400CEEF2B /* NoteDuration.swift in Sources */,
 				232DBC9F2D2C10FD00CEEF2B /* WorkspaceView.swift in Sources */,
+				232DBCD32D2D269200CEEF2B /* TimeSignatureSelector.swift in Sources */,
 				232DBC8A2D2C10B100CEEF2B /* ContentView.swift in Sources */,
 				232DBCA82D2C115100CEEF2B /* RegisterView.swift in Sources */,
 				232DBCA42D2C114400CEEF2B /* InputView.swift in Sources */,
 				232DBC8C2D2C10B100CEEF2B /* Item.swift in Sources */,
+				232DBCD12D2D268000CEEF2B /* KeySignatureSelector.swift in Sources */,
 				232DBC882D2C10B100CEEF2B /* tutorviolinApp.swift in Sources */,
+				232DBCC42D2D243000CEEF2B /* ScoreAudioEngine.swift in Sources */,
+				232DBCE22D2D2B7100CEEF2B /* KeySignatureView.swift in Sources */,
+				232DBCF02D2D370100CEEF2B /* TimeSignature.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

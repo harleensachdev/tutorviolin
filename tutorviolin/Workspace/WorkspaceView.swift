@@ -8,25 +8,24 @@
 import SwiftUI
 
 struct WorkspaceView: View {
+    @State private var showingScoreEditor = false
+    
     var body: some View {
         VStack {
             Text("My Workspaces")
                 .font(.title)
                 .padding()
             
-            Spacer()
-            
-            Text("Add your first workspace")
-                .foregroundColor(.gray)
-            
-            Button(action: {}) {
-                Label("New Workspace", systemImage: "plus.circle.fill")
+            Button(action: { showingScoreEditor = true }) {
+                Label("New Score", systemImage: "plus.circle.fill")
                     .padding()
                     .background(Color.blue)
                     .foregroundColor(.white)
                     .cornerRadius(10)
             }
-            .padding()
+            .sheet(isPresented: $showingScoreEditor) {
+                ScoreEditorView()
+            }
             
             Spacer()
         }
