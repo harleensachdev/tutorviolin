@@ -33,6 +33,9 @@
 		232DBCEE2D2D36D400CEEF2B /* NoteDuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232DBCED2D2D36D400CEEF2B /* NoteDuration.swift */; };
 		232DBCF02D2D370100CEEF2B /* TimeSignature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232DBCEF2D2D370100CEEF2B /* TimeSignature.swift */; };
 		232DBCF22D2D371D00CEEF2B /* NoteDurationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232DBCF12D2D371D00CEEF2B /* NoteDurationButton.swift */; };
+		232DBD042D308ADB00CEEF2B /* ClefView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232DBD032D308ADB00CEEF2B /* ClefView.swift */; };
+		232DBD062D308AF700CEEF2B /* TimeSignatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232DBD052D308AF700CEEF2B /* TimeSignatureView.swift */; };
+		232DBD082D30E72000CEEF2B /* AccidentalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232DBD072D30E72000CEEF2B /* AccidentalsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +67,9 @@
 		232DBCED2D2D36D400CEEF2B /* NoteDuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDuration.swift; sourceTree = "<group>"; };
 		232DBCEF2D2D370100CEEF2B /* TimeSignature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSignature.swift; sourceTree = "<group>"; };
 		232DBCF12D2D371D00CEEF2B /* NoteDurationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDurationButton.swift; sourceTree = "<group>"; };
+		232DBD032D308ADB00CEEF2B /* ClefView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClefView.swift; sourceTree = "<group>"; };
+		232DBD052D308AF700CEEF2B /* TimeSignatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TimeSignatureView.swift; path = "tutorviolin/ScoreDisplay /Signature/TimeSignatureView.swift"; sourceTree = SOURCE_ROOT; };
+		232DBD072D30E72000CEEF2B /* AccidentalsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccidentalsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +196,7 @@
 				232DBCF62D2D383C00CEEF2B /* TimeSignature */,
 				232DBCE32D2D2E7B00CEEF2B /* KeySignature */,
 				232DBCDD2D2D2ADA00CEEF2B /* Clef.swift */,
+				232DBD032D308ADB00CEEF2B /* ClefView.swift */,
 			);
 			path = Signature;
 			sourceTree = "<group>";
@@ -236,6 +243,7 @@
 			isa = PBXGroup;
 			children = (
 				232DBCE12D2D2B7100CEEF2B /* KeySignatureView.swift */,
+				232DBD072D30E72000CEEF2B /* AccidentalsView.swift */,
 			);
 			path = KeySignatureView;
 			sourceTree = "<group>";
@@ -261,6 +269,7 @@
 		232DBCF82D2D384B00CEEF2B /* TimeSignatureView */ = {
 			isa = PBXGroup;
 			children = (
+				232DBD052D308AF700CEEF2B /* TimeSignatureView.swift */,
 			);
 			path = TimeSignatureView;
 			sourceTree = "<group>";
@@ -335,12 +344,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				232DBD082D30E72000CEEF2B /* AccidentalsView.swift in Sources */,
 				232DBCE02D2D2B4F00CEEF2B /* KeySignature.swift in Sources */,
 				232DBCF22D2D371D00CEEF2B /* NoteDurationButton.swift in Sources */,
 				232DBCCF2D2D264900CEEF2B /* WorkspaceModel.swift in Sources */,
 				232DBCDB2D2D26F900CEEF2B /* StaffView.swift in Sources */,
 				232DBCDE2D2D2ADA00CEEF2B /* Clef.swift in Sources */,
 				232DBCD92D2D26DB00CEEF2B /* PianoKeyboardView.swift in Sources */,
+				232DBD062D308AF700CEEF2B /* TimeSignatureView.swift in Sources */,
 				232DBCA62D2C114B00CEEF2B /* LoginView.swift in Sources */,
 				232DBCEC2D2D36C600CEEF2B /* MusicalNote.swift in Sources */,
 				232DBCCB2D2D257300CEEF2B /* ScoreEditorView.swift in Sources */,
@@ -354,6 +365,7 @@
 				232DBC8C2D2C10B100CEEF2B /* Item.swift in Sources */,
 				232DBCD12D2D268000CEEF2B /* KeySignatureSelector.swift in Sources */,
 				232DBC882D2C10B100CEEF2B /* tutorviolinApp.swift in Sources */,
+				232DBD042D308ADB00CEEF2B /* ClefView.swift in Sources */,
 				232DBCC42D2D243000CEEF2B /* ScoreAudioEngine.swift in Sources */,
 				232DBCE22D2D2B7100CEEF2B /* KeySignatureView.swift in Sources */,
 				232DBCF02D2D370100CEEF2B /* TimeSignature.swift in Sources */,

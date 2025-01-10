@@ -47,7 +47,7 @@ struct KeySignatureView: View {
         
         // These positions are relative to the middle line of the staff
         let sharpPositions: [String: CGFloat] = [
-            "F": 0, "C": -3, "G": 1, "D": -2, "A": -5, "E": 0, "B": -3
+            "F": 1, "C": -3, "G": 1, "D": -2, "A": -5, "E": 0, "B": -3
         ]
         
         let flatPositions: [String: CGFloat] = [

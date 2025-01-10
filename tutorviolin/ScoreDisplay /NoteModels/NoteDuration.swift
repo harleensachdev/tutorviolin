@@ -11,7 +11,7 @@ enum NoteDuration: String, CaseIterable {
     case whole = "o"
     case half = "o|"
     case quarter = "♩"
-    case eighth = "♪ "
+    case eighth = "♪"
     
     var durationValue: Double {
         switch self {

@@ -12,15 +12,7 @@ struct KeySignatureSelector: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
-            // Clef selector
-            Picker("Clef", selection: $clef) {
-                ForEach(Clef.allCases, id: \.self) { clef in
-                    Text(clef.rawValue)
-                        .font(.system(size: 24))
-                        .tag(clef)
-                }
-            }
-            .pickerStyle(.segmented)
+
             
             // Key signature selector
             Menu {
