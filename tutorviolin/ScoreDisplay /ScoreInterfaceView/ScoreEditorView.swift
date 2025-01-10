@@ -44,7 +44,7 @@ struct ScoreEditorView: View {
             }
             
             // Single staff view - this uses your existing StaffView
-            StaffView(keySignature: $keySignature, clef: $clef, notes: notes)
+            StaffView(keySignature: $keySignature, clef: $clef, timeSignature: $timeSignature,notes: notes)
                 .frame(height: staffHeight)
             
             // Piano keyboard

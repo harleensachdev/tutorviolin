@@ -11,14 +11,12 @@ struct TimeSignatureView: View {
     let timeSignature: TimeSignature
     
     var body: some View {
-        VStack(spacing: 2) {
-            // Upper number
+        VStack(spacing: 1) {
             Text("\(timeSignature.beats)")
-                .font(.system(size: 16, weight: .bold))
-            
-            // Lower number
+                .font(.system(size: 14, weight: .bold))
             Text("\(timeSignature.beatValue)")
-                .font(.system(size: 16, weight: .bold))
+                .font(.system(size: 14, weight: .bold))
         }
+        .frame(width: 20)
     }
 }

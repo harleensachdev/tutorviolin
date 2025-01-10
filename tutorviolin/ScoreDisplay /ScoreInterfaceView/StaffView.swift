@@ -8,6 +8,8 @@ import SwiftUI
 struct StaffView: View {
     @Binding var keySignature: KeySignature
     @Binding var clef: Clef
+    @Binding var timeSignature: TimeSignature  // Add binding for time signature
+
     let notes: [MusicalNote]
     
     // Refined measurements based on traditional music notation
@@ -21,7 +23,10 @@ struct StaffView: View {
     private let staffTopPosition: CGFloat = 20    // Lower starting position for staff
     private let leftMargin: CGFloat = 100        // More space for clef and key signature
     private let clefWidth: CGFloat = 40          // Space for clef
+    private let timeSignatureStartX: CGFloat = 20// Position for time signature
+
     private func getYPosition(for pitch: String) -> CGFloat {
+        
         // More precise positioning using the refined staff line spacing
         let basePosition: CGFloat = 53 // Starting position of the bottom staff line
         
@@ -62,9 +67,11 @@ struct StaffView: View {
                     
                     HStack(spacing: 0) {
                         KeySignatureView(keySignature: keySignature, clef: clef)
-                            .frame(width: leftMargin - clefWidth) // Use remaining space
+                            .frame(width: 50) // Use remaining space
                             .offset(y: staffTopPosition - staffLineSpacing * 0.5) // Align with staff
-                        
+                        TimeSignatureView(timeSignature: timeSignature)
+                            .offset(x:19,y: (staffTopPosition - staffLineSpacing * 0.5)-5 ) // Align with staff
+
                         Spacer()
                     }
         
@@ -123,4 +130,57 @@ struct RefinedNoteView: View {
             }
         }
     }
+}
+
+#Preview {
+    // Create sample data
+    let sampleNotes: [MusicalNote] = [
+        MusicalNote(pitch: "C4", duration: .quarter, position: 0),
+        MusicalNote(pitch: "E4", duration: .quarter, position: 1),
+        MusicalNote(pitch: "G4", duration: .quarter, position: 2)
+    ]
+    
+    return VStack(spacing: 20) {
+        // Preview with C Major (no accidentals)
+        StaffView(
+            keySignature: .constant(KeySignature(tonic: "C", mode: .major, accidentalCount: 5)),
+            clef: .constant(.treble),
+            timeSignature: .constant(.common),
+            notes: sampleNotes
+        )
+        
+        // Preview with G Major (1 sharp)
+        StaffView(
+            keySignature: .constant(KeySignature(tonic: "G", mode: .major, accidentalCount: 1)),
+            clef: .constant(.treble),
+            timeSignature: .constant(.common),
+            notes: sampleNotes
+        )
+        
+        // Preview with D Major (2 sharps)
+        StaffView(
+            keySignature: .constant(KeySignature(tonic: "D", mode: .major, accidentalCount: 2)),
+            clef: .constant(.treble),
+            timeSignature: .constant(.common),
+            notes: sampleNotes
+        )
+        
+        // Preview with F Major (1 flat)
+        StaffView(
+            keySignature: .constant(KeySignature(tonic: "D", mode: .major, accidentalCount: -5)),
+            clef: .constant(.treble),
+            timeSignature: .constant(.common),
+            notes: sampleNotes
+        )
+        
+        // Preview with B♭ Major (2 flats)
+        StaffView(
+            keySignature: .constant(KeySignature(tonic: "B♭", mode: .major, accidentalCount: -2)),
+            clef: .constant(.treble),
+            timeSignature: .constant(.common),
+            notes: sampleNotes
+        )
+    }
+    .padding()
+    .frame(height: 500)  // Adjust this to see more or fewer staves
 }

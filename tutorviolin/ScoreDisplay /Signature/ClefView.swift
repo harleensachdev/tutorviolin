@@ -9,6 +9,7 @@ import SwiftUI
 
 // New view for drawing the treble clef
 struct ClefView: View {
+    let clef: Clef
     
     var body: some View {
         GeometryReader { geometry in
