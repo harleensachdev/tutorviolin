@@ -8,14 +8,37 @@ import SwiftUI
 
 struct TimeSignatureSelector: View {
     @Binding var timeSignature: TimeSignature
+    @State private var showingPicker = false
     
     var body: some View {
-        Button("\(timeSignature.beats)/\(timeSignature.beatValue)") {
-            // Toggle between 4/4 and 3/4
-            if timeSignature.beats == 4 {
-                timeSignature = TimeSignature(beats: 3, beatValue: 4)
-            } else {
-                timeSignature = TimeSignature(beats: 4, beatValue: 4)
+        Button(action: { showingPicker = true }) {
+            HStack {
+                Text("Time:")
+                    .foregroundColor(.secondary)
+                TimeSignatureView(timeSignature: timeSignature)
+            }
+        }
+        .sheet(isPresented: $showingPicker) {
+            NavigationView {
+                List(TimeSignature.commonTimeSignatures, id: \.beats) { sig in
+                    Button(action: {
+                        timeSignature = sig
+                        showingPicker = false
+                    }) {
+                        HStack {
+                            Text("\(sig.beats)/\(sig.beatValue)")
+                            Spacer()
+                            if timeSignature == sig {
+                                Image(systemName: "checkmark")
+                                    .foregroundColor(.blue)
+                            }
+                        }
+                    }
+                }
+                .navigationTitle("Select Time Signature")
+                .navigationBarItems(trailing: Button("Done") {
+                    showingPicker = false
+                })
             }
         }
     }

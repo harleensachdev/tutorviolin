@@ -6,20 +6,16 @@
 //
 import SwiftUI
 struct ScoreEditorView: View {
-    // Your existing state variables remain the same
     @State private var notes: [MusicalNote] = []
     @State private var selectedDuration: NoteDuration = .quarter
     @State private var timeSignature = TimeSignature.common
     @State private var keySignature = KeySignature(tonic: "C", mode: .major, accidentalCount: 0)
     @State private var clef: Clef = .treble
     @State private var isPlaying = false
-    
-    // Simplified layout constants - we'll use these to ensure proper spacing
-    private let staffHeight: CGFloat = 160
-    private let contentPadding: CGFloat = 16
+    @State private var currentPage: Int = 0
     
     var body: some View {
-        VStack(spacing: contentPadding) {
+        VStack(spacing: 16) {
             // Top controls section
             HStack {
                 KeySignatureSelector(keySignature: $keySignature, clef: $clef)
@@ -29,40 +25,70 @@ struct ScoreEditorView: View {
             }
             .padding(.horizontal)
             
+            // Staff view with scroll functionality
+            StaffView(
+                keySignature: $keySignature,
+                clef: $clef,
+                timeSignature: $timeSignature,
+                notes: notes
+            )
+            .frame(height: 160)
+            .padding(.horizontal)
+            
             // Note duration selector
-            ScrollView(.horizontal, showsIndicators: false) {
-                HStack(spacing: 12) {
-                    ForEach(NoteDuration.allCases, id: \.self) { duration in
-                        NoteDurationButton(
-                            duration: duration,
-                            isSelected: duration == selectedDuration,
-                            action: { selectedDuration = duration }
-                        )
+            NoteDurationSelector(
+                selectedDuration: $selectedDuration,
+                onSelect: { duration in
+                    selectedDuration = duration
+                    if duration.isRest {
+                        addRest()
                     }
                 }
-                .padding(.horizontal)
+            )
+            .frame(height: 240)
+            
+            // Note selector (only visible when non-rest duration is selected)
+            if !selectedDuration.isRest {
+                NoteSelectorView { pitch in
+                    addNote(pitch: pitch)
+                }
+                .frame(height: 160)
+                .transition(.opacity)
             }
             
-            // Single staff view - this uses your existing StaffView
-            StaffView(keySignature: $keySignature, clef: $clef, timeSignature: $timeSignature,notes: notes)
-                .frame(height: staffHeight)
-            
-            // Piano keyboard
-            PianoKeyboardView { pitch in
-                addNote(pitch: pitch)
+            HStack {
+                // Clear button
+                Button(action: { notes.removeAll() }) {
+                    Label("Clear Score", systemImage: "trash")
+                        .foregroundColor(.red)
+                }
+                
+                Spacer()
+                
+                // Undo button
+                Button(action: { if !notes.isEmpty { notes.removeLast() }}) {
+                    Label("Undo", systemImage: "arrow.uturn.backward")
+                        .foregroundColor(.blue)
+                }
             }
+            .padding(.horizontal)
+            .padding(.top, 8)
         }
+        .padding(.vertical)
+        .animation(.easeInOut, value: selectedDuration.isRest)
     }
     
-    // Update playback to use modern async/await instead of Thread.sleep
     private func playScore() {
         Task {
             guard !isPlaying else { return }
             isPlaying = true
             
             for note in notes {
-                ScoreAudioEngine.shared.playNote(pitch: note.pitch)
-                try? await Task.sleep(nanoseconds: 500_000_000) // 0.5 seconds
+                if !note.duration.isRest {
+                    ScoreAudioEngine.shared.playNote(pitch: note.pitch)
+                }
+                // Use the durationValue from NoteDuration for timing
+                try? await Task.sleep(nanoseconds: UInt64(note.duration.durationValue * 500_000_000))
             }
             
             isPlaying = false
@@ -77,5 +103,14 @@ struct ScoreEditorView: View {
         )
         notes.append(newNote)
         ScoreAudioEngine.shared.playNote(pitch: pitch)
+    }
+    
+    private func addRest() {
+        let newRest = MusicalNote(
+            pitch: "R",
+            duration: selectedDuration,
+            position: Double(notes.count)
+        )
+        notes.append(newRest)
     }
 }
