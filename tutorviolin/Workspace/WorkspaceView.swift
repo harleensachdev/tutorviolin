@@ -8,26 +8,37 @@
 import SwiftUI
 
 struct WorkspaceView: View {
+    @StateObject private var workspaceVM = WorkspaceViewModel()
     @State private var showingScoreEditor = false
     
     var body: some View {
-        VStack {
-            Text("My Workspaces")
-                .font(.title)
-                .padding()
-            
-            Button(action: { showingScoreEditor = true }) {
-                Label("New Score", systemImage: "plus.circle.fill")
-                    .padding()
-                    .background(Color.blue)
-                    .foregroundColor(.white)
-                    .cornerRadius(10)
+        NavigationView {
+            List {
+                ForEach(workspaceVM.workspaces) { workspace in
+                    Section(header: Text(workspace.name)) {
+                        ForEach(workspace.scores) { score in
+                            NavigationLink(score.name) {
+                                StaffView(
+                                    keySignature: .constant(score.keySignature),
+                                    clef: .constant(score.clef),
+                                    timeSignature: .constant(score.timeSignature),
+                                    notes: score.notes
+                                )
+                            }
+                        }
+                    }
+                }
             }
-            .sheet(isPresented: $showingScoreEditor) {
-                ScoreEditorView()
+            .navigationTitle("My Workspaces")
+            .toolbar {
+                Button(action: { showingScoreEditor = true }) {
+                    Image(systemName: "plus")
+                }
             }
-            
-            Spacer()
+        }
+        .sheet(isPresented: $showingScoreEditor) {
+            ScoreEditorView()
+                .environmentObject(workspaceVM)
         }
     }
 }

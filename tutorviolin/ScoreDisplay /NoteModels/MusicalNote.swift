@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct MusicalNote: Identifiable { // Musical note represents a note with specific properties
+struct MusicalNote: Identifiable, Codable { // Musical note represents a note with specific properties
     let id = UUID() // unique identifier to distinguish from other notes
     var pitch: String  // e.g., "C4", "D4", etc.
     var duration: NoteDuration

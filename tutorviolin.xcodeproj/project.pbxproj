@@ -38,6 +38,10 @@
 		232DBD082D30E72000CEEF2B /* AccidentalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232DBD072D30E72000CEEF2B /* AccidentalsView.swift */; };
 		232DBD0A2D3201CA00CEEF2B /* LedgerLines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232DBD092D3201CA00CEEF2B /* LedgerLines.swift */; };
 		232DBD0E2D3263A000CEEF2B /* NoteFlagModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232DBD0D2D3263A000CEEF2B /* NoteFlagModels.swift */; };
+		239B7EDD2D33A5A0008C250D /* RefinedNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239B7EDC2D33A5A0008C250D /* RefinedNoteView.swift */; };
+		239B7EDF2D33A5FD008C250D /* RestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239B7EDE2D33A5FD008C250D /* RestViewModel.swift */; };
+		239B7EE12D33AAF3008C250D /* ScrollPositionPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239B7EE02D33AAF3008C250D /* ScrollPositionPreference.swift */; };
+		239B7EE32D33B8A9008C250D /* WorkspaceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239B7EE22D33B8A9008C250D /* WorkspaceViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +78,10 @@
 		232DBD072D30E72000CEEF2B /* AccidentalsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccidentalsView.swift; sourceTree = "<group>"; };
 		232DBD092D3201CA00CEEF2B /* LedgerLines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LedgerLines.swift; sourceTree = "<group>"; };
 		232DBD0D2D3263A000CEEF2B /* NoteFlagModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteFlagModels.swift; sourceTree = "<group>"; };
+		239B7EDC2D33A5A0008C250D /* RefinedNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefinedNoteView.swift; sourceTree = "<group>"; };
+		239B7EDE2D33A5FD008C250D /* RestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestViewModel.swift; sourceTree = "<group>"; };
+		239B7EE02D33AAF3008C250D /* ScrollPositionPreference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollPositionPreference.swift; sourceTree = "<group>"; };
+		239B7EE22D33B8A9008C250D /* WorkspaceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkspaceViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				232DBC9E2D2C10FD00CEEF2B /* WorkspaceView.swift */,
+				239B7EE22D33B8A9008C250D /* WorkspaceViewModel.swift */,
 				232DBCCE2D2D264900CEEF2B /* WorkspaceModel.swift */,
 			);
 			path = Workspace;
@@ -189,8 +198,11 @@
 				232DBCCA2D2D257300CEEF2B /* ScoreEditorView.swift */,
 				232DBCD62D2D26CA00CEEF2B /* PlaybackControls.swift */,
 				232DBCD82D2D26DB00CEEF2B /* PianoKeyboardView.swift */,
+				239B7EDC2D33A5A0008C250D /* RefinedNoteView.swift */,
 				232DBCDA2D2D26F900CEEF2B /* StaffView.swift */,
+				239B7EE02D33AAF3008C250D /* ScrollPositionPreference.swift */,
 				232DBD0D2D3263A000CEEF2B /* NoteFlagModels.swift */,
+				239B7EDE2D33A5FD008C250D /* RestViewModel.swift */,
 				232DBD092D3201CA00CEEF2B /* LedgerLines.swift */,
 			);
 			path = ScoreInterfaceView;
@@ -350,16 +362,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				239B7EDF2D33A5FD008C250D /* RestViewModel.swift in Sources */,
 				232DBD082D30E72000CEEF2B /* AccidentalsView.swift in Sources */,
 				232DBCE02D2D2B4F00CEEF2B /* KeySignature.swift in Sources */,
 				232DBCF22D2D371D00CEEF2B /* NoteDurationButton.swift in Sources */,
 				232DBCCF2D2D264900CEEF2B /* WorkspaceModel.swift in Sources */,
 				232DBCDB2D2D26F900CEEF2B /* StaffView.swift in Sources */,
+				239B7EE32D33B8A9008C250D /* WorkspaceViewModel.swift in Sources */,
 				232DBCDE2D2D2ADA00CEEF2B /* Clef.swift in Sources */,
 				232DBD0A2D3201CA00CEEF2B /* LedgerLines.swift in Sources */,
 				232DBCD92D2D26DB00CEEF2B /* PianoKeyboardView.swift in Sources */,
 				232DBD062D308AF700CEEF2B /* TimeSignatureView.swift in Sources */,
+				239B7EE12D33AAF3008C250D /* ScrollPositionPreference.swift in Sources */,
 				232DBCA62D2C114B00CEEF2B /* LoginView.swift in Sources */,
+				239B7EDD2D33A5A0008C250D /* RefinedNoteView.swift in Sources */,
 				232DBCEC2D2D36C600CEEF2B /* MusicalNote.swift in Sources */,
 				232DBCCB2D2D257300CEEF2B /* ScoreEditorView.swift in Sources */,
 				232DBCD72D2D26CA00CEEF2B /* PlaybackControls.swift in Sources */,

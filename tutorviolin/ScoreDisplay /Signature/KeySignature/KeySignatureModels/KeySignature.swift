@@ -7,13 +7,13 @@
 
 import SwiftUI
 
-struct KeySignature: Equatable, Identifiable {
+struct KeySignature: Equatable, Identifiable, Codable {
     let id = UUID()
     var tonic: String      // The root note (e.g., "C", "G", etc.)
     var mode: Mode
     var accidentalCount: Int  // Number of sharps (positive) or flats (negative)
     
-    enum Mode: String, CaseIterable {
+    enum Mode: String, CaseIterable, Codable {
         case major = "Major"
         case minor = "Minor"
         

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct TimeSignature: Equatable {
+struct TimeSignature: Codable, Equatable {
     var beats: Int
     var beatValue: Int
     

@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-enum Clef: String, CaseIterable {
+enum Clef: String, CaseIterable, Codable {
     case treble = "𝄞"    // G clef
     
     var staffOffset: Int {

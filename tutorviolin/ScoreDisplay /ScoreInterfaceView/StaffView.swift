@@ -13,7 +13,7 @@ struct StaffView: View {
     let notes: [MusicalNote]
     @State private var currentPage: Int = 0
     @State private var scrollPosition: CGFloat = 0
-    
+
     // Refined measurements
     private let staffLineSpacing: CGFloat = 6.5
     private let noteHeadWidth: CGFloat = 7.5
@@ -67,36 +67,36 @@ struct StaffView: View {
     }
     
     // Calculate visible width (width available for notes)
-     private var visibleWidth: CGFloat {
-         pageWidth - leftMargin
-     }
-     
-     // Calculate total content width
-     private var totalContentWidth: CGFloat {
-         let notesWidth = CGFloat(notes.count) * horizontalSpacing
-         return max(pageWidth, leftMargin + notesWidth + 100)
-     }
-     
-     // Calculate number of pages
-     private var totalPages: Int {
-         let notesPerPageWidth = (visibleWidth / horizontalSpacing).rounded(.down)
-         return max(1, Int(ceil(Double(notes.count) / Double(notesPerPageWidth))))
-     }
-     
-     // Calculate the start and end indices for the current page
-     private var currentPageIndices: (start: Int, end: Int) {
-         let notesPerPageWidth = Int((visibleWidth / horizontalSpacing).rounded(.down))
-         let start = currentPage * notesPerPageWidth
-         let end = min(start + notesPerPageWidth, notes.count)
-         return (start, end)
-     }
-     
-     // Calculate scroll offset for current page
-     private var pageScrollOffset: CGFloat {
-         let notesPerPageWidth = (visibleWidth / horizontalSpacing).rounded(.down)
-         return CGFloat(currentPage) * (notesPerPageWidth * horizontalSpacing)
-     }
-
+    private var visibleWidth: CGFloat {
+        pageWidth - leftMargin
+    }
+    
+    // Calculate total content width
+    private var totalContentWidth: CGFloat {
+        let notesWidth = CGFloat(notes.count) * horizontalSpacing
+        return max(pageWidth, leftMargin + notesWidth + 100)
+    }
+    
+    // Calculate number of pages
+    private var totalPages: Int {
+        let notesPerPageWidth = (visibleWidth / horizontalSpacing).rounded(.down)
+        return max(1, Int(ceil(Double(notes.count) / Double(notesPerPageWidth))))
+    }
+    
+    // Calculate the start and end indices for the current page
+    private var currentPageIndices: (start: Int, end: Int) {
+        let notesPerPageWidth = Int((visibleWidth / horizontalSpacing).rounded(.down))
+        let start = currentPage * notesPerPageWidth
+        let end = min(start + notesPerPageWidth, notes.count)
+        return (start, end)
+    }
+    
+    // Calculate scroll offset for current page
+    private var pageScrollOffset: CGFloat {
+        let notesPerPageWidth = (visibleWidth / horizontalSpacing).rounded(.down)
+        return CGFloat(currentPage) * (notesPerPageWidth * horizontalSpacing)
+    }
+    
     
     // Calculate bar line positions
     private func getBarLinePositions() -> [CGFloat] {
@@ -226,164 +226,75 @@ struct StaffView: View {
                             
                             // Notes with ledger lines
                             ForEach(Array(notes.enumerated()), id: \.element.id) { index, note in
-                                                            let noteX = leftMargin + CGFloat(index) * horizontalSpacing
-                                                            let noteY = getYPosition(for: note.pitch)
-                                                            
-                                                            Group {
-                                                                // Draw accidental if needed
-                                                                if let accidental = getAccidental(for: note.pitch) {
-                                                                    Text(accidental)
-                                                                        .font(.system(size: staffLineSpacing * 3))
-                                                                        .position(x: noteX - accidentalOffset, y: noteY)
-                                                                }
-                                                                
-                                                                // Ledger lines
-                                                                if !note.duration.isRest {
-                                                                    ForEach(getLedgerLines(for: note.pitch), id: \.self) { lineY in
-                                                                        Path { path in
-                                                                            path.move(to: CGPoint(x: noteX - ledgerLineWidth/2, y: lineY))
-                                                                            path.addLine(to: CGPoint(x: noteX + ledgerLineWidth/2, y: lineY))
-                                                                        }
-                                                                        .stroke(Color.black, lineWidth: 0.5)
-                                                                    }
-                                                                }
-                                                                
-                                                                // Note view
-                                                                RefinedNoteView(
-                                                                    note: note,
-                                                                    headWidth: noteHeadWidth,
-                                                                    headHeight: noteHeadHeight,
-                                                                    stemWidth: stemWidth,
-                                                                    stemHeight: stemHeight,
-                                                                    shouldStemUp: noteY > 40
-                                                                )
-                                                                .position(x: noteX, y: noteY)
-                                                                .id("note\(index)")
-                                                            }
-                                                        }
-                                                    }
-                                                }
-                                                .frame(height: 80)
-                                                .frame(width: max(UIScreen.main.bounds.width, CGFloat(notes.count) * horizontalSpacing + leftMargin + 100))
-                                            }
-                                            .onChange(of: notes.count) { state, newCount in
-                                                if newCount > 0 {
-                                                    withAnimation {
-                                                        proxy.scrollTo("note\(newCount - 1)", anchor: .trailing)
-                                                    }
-                                                }
-                                            }
-                                            .onChange(of: currentPage) { state, newPage in
-                                                withAnimation(.easeInOut(duration: 0.3)) {
-                                                    let noteIndex = min(newPage * Int(visibleWidth / horizontalSpacing), notes.count - 1)
-                                                    if noteIndex >= 0 {
-                                                        proxy.scrollTo("note\(noteIndex)", anchor: .leading)
-                                                    }
-                                                }
-                                            }
-                                        }
-                                        
-                                        // Navigation controls (keep existing navigation controls code)
-                                        HStack {
-                                            Button(action: {
-                                                withAnimation {
-                                                    currentPage = max(0, currentPage - 1)
-                                                }
-                                            }) {
-                                                Image(systemName: "arrow.left.circle.fill")
-                                                    .font(.title)
-                                                    .foregroundColor(currentPage > 0 ? .blue : .gray)
-                                            }
-                                            .disabled(currentPage == 0)
-                                            
-                                            Spacer()
-                                            
-                                            Text("\(currentPage + 1) / \(totalPages)")
-                                                .font(.caption)
-                                                .foregroundColor(.secondary)
-                                            
-                                            Spacer()
-                                            
-                                            Button(action: {
-                                                withAnimation {
-                                                    currentPage = min(totalPages - 1, currentPage + 1)
-                                                }
-                                            }) {
-                                                Image(systemName: "arrow.right.circle.fill")
-                                                    .font(.title)
-                                                    .foregroundColor(currentPage < totalPages - 1 ? .blue : .gray)
-                                            }
-                                            .disabled(currentPage >= totalPages - 1)
-                                        }
-                                        .padding(.horizontal)
+                                let noteX = leftMargin + CGFloat(index) * horizontalSpacing
+                                let noteY = getYPosition(for: note.pitch)
+                                
+                                Group {
+                                    // Draw accidental if needed
+                                    if let accidental = getAccidental(for: note.pitch) {
+                                        Text(accidental)
+                                            .font(.system(size: staffLineSpacing * 3))
+                                            .position(x: noteX - accidentalOffset, y: noteY)
                                     }
+                                    
+                                    // Ledger lines
+                                    if !note.duration.isRest {
+                                        ForEach(getLedgerLines(for: note.pitch), id: \.self) { lineY in
+                                            Path { path in
+                                                path.move(to: CGPoint(x: noteX - ledgerLineWidth/2, y: lineY))
+                                                path.addLine(to: CGPoint(x: noteX + ledgerLineWidth/2, y: lineY))
+                                            }
+                                            .stroke(Color.black, lineWidth: 0.5)
+                                        }
+                                    }
+                                    
+                                    // Note view
+                                    RefinedNoteView(
+                                        note: note,
+                                        headWidth: noteHeadWidth,
+                                        headHeight: noteHeadHeight,
+                                        stemWidth: stemWidth,
+                                        stemHeight: stemHeight,
+                                        shouldStemUp: noteY > 40
+                                    )
+                                    .position(x: noteX, y: noteY)
+                                    .id("note\(index)")
                                 }
-                            }
-    struct RefinedNoteView: View {
-        let note: MusicalNote
-        let headWidth: CGFloat
-        let headHeight: CGFloat
-        let stemWidth: CGFloat
-        let stemHeight: CGFloat
-        let shouldStemUp: Bool
-        
-        var body: some View {
-            ZStack {
-                if note.duration.isRest {
-                    RestView(duration: note.duration)
-                } else {
-                    ZStack {
-                        // Note head
-                        Ellipse()
-                            .fill(note.duration == .whole || note.duration == .half ||
-                                  note.duration == .wholeD || note.duration == .halfD ?
-                                  Color.white : Color.black)
-                            .frame(width: headWidth, height: headHeight)
-                            .rotationEffect(.degrees(-20))
-                            .overlay(
-                                Ellipse()
-                                    .stroke(Color.black, lineWidth: 0.5)
-                            )
-                        
-                        // Stem and flags
-                        if ![.whole, .wholeD].contains(note.duration) {
-                            // Stem
-                            Rectangle()
-                                .fill(Color.black)
-                                .frame(width: stemWidth, height: stemHeight+5)
-                                .offset(
-                                    x: shouldStemUp ? headWidth * 0.5 : -headWidth * 0.4,
-                                    y: shouldStemUp ? -stemHeight * 0.5 : stemHeight * 0.5
-                                )
-                            
-                            // Eighth and Sixteenth note flags using images
-                            if [.eighth, .eighthD, .sixteenth, .sixteenthD].contains(note.duration) {
-                                NoteFlag(
-                                    duration: note.duration,
-                                    shouldStemUp: shouldStemUp,
-                                    stemWidth: stemWidth,
-                                    stemHeight: stemHeight
-                                )
-                                .frame(width: 10, height: shouldStemUp ? 8 : 12)
-                                .offset(
-                                    x: shouldStemUp ? headWidth * 1 : -headWidth * 0.1,
-                                    y: shouldStemUp ? -stemHeight + 5 : stemHeight - 5
-                                )
-                            }
-                            
-                            // Dot for dotted notes
-                            if note.duration.rawValue.hasSuffix(".") {
-                                Circle()
-                                    .fill(Color.black)
-                                    .frame(width: 3, height: 3)
-                                    .offset(x: headWidth * 1.2, y: 0)
                             }
                         }
                     }
+                    .frame(height: 80)
+                    .frame(width: max(UIScreen.main.bounds.width, CGFloat(notes.count) * horizontalSpacing + leftMargin + 100))
+                    
                 }
+                
+                // Save Dialog Sheet
+                
+                            
+                                .onChange(of: notes.count) { state, newCount in
+                                    if newCount > 0 {
+                                        withAnimation {
+                                            proxy.scrollTo("note\(newCount - 1)", anchor: .trailing)
+                                        }
+                                    }
+                                }
+                                .onChange(of: currentPage) { state, newPage in
+                                    withAnimation(.easeInOut(duration: 0.3)) {
+                                        let noteIndex = min(newPage * Int(visibleWidth / horizontalSpacing), notes.count - 1)
+                                        if noteIndex >= 0 {
+                                            proxy.scrollTo("note\(noteIndex)", anchor: .leading)
+                                        }
+                                    }
+                                }
+                            
+                            
+                            // Navigation controls (keep existing navigation controls code)
+                        
+                    }
+                }
+                
             }
         }
-    }
 
 
 // Extension to help with note type checking
@@ -393,42 +304,6 @@ extension NoteDuration {
     }
 }
 
-struct RestView: View {
-    let duration: NoteDuration
-    
-    var body: some View {
-        GeometryReader { geometry in
-            switch duration {
-            case .wholeRest:
-                Rectangle()
-                    .fill(Color.black)
-                    .frame(width: 10, height: 3)
-                    .offset(y: 8)
-            case .halfRest:
-                Rectangle()
-                    .fill(Color.black)
-                    .frame(width: 10, height: 3)
-                    .offset(y: 12)
-            case .quarterRest:
-                Image("quarter_rest")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 15)
-                    .offset(y: 9)
-            case .eighthRest:
-                Image("eighth_rest")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 15)
-                    .offset(y: 9)
-
-            default:
-                EmptyView()
-            }
-        }
-        .frame(width: 15, height: 30)  // Smaller frame for rests
-    }
-}
 
 #Preview {
     // Create sample data

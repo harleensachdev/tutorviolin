@@ -8,7 +8,7 @@
 import Foundation
 
 
-enum NoteDuration: String, CaseIterable {
+enum NoteDuration: String, CaseIterable, Codable {
     case whole = "𝅝"             // U+1D15D
     case wholeD = "𝅝."           // Whole note with dot
     case half = "𝅗𝅥"             // U+1D157 U+1D165
