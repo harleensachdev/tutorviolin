@@ -36,12 +36,17 @@
 		232DBD042D308ADB00CEEF2B /* ClefView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232DBD032D308ADB00CEEF2B /* ClefView.swift */; };
 		232DBD062D308AF700CEEF2B /* TimeSignatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232DBD052D308AF700CEEF2B /* TimeSignatureView.swift */; };
 		232DBD082D30E72000CEEF2B /* AccidentalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232DBD072D30E72000CEEF2B /* AccidentalsView.swift */; };
-		232DBD0A2D3201CA00CEEF2B /* LedgerLines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232DBD092D3201CA00CEEF2B /* LedgerLines.swift */; };
 		232DBD0E2D3263A000CEEF2B /* NoteFlagModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232DBD0D2D3263A000CEEF2B /* NoteFlagModels.swift */; };
+		232E3A402D3CBA69004C17E9 /* ARKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 232E3A3F2D3CBA69004C17E9 /* ARKit.framework */; platformFilter = ios; };
+		232E3A422D3CBA79004C17E9 /* SceneKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 232E3A412D3CBA79004C17E9 /* SceneKit.framework */; };
+		232E3A442D3CBA94004C17E9 /* Vision.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 232E3A432D3CBA94004C17E9 /* Vision.framework */; };
+		232E3A472D3CBC99004C17E9 /* RhythmTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232E3A462D3CBC99004C17E9 /* RhythmTestView.swift */; };
+		232E3A492D3CBCC5004C17E9 /* PerformanceReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232E3A482D3CBCC5004C17E9 /* PerformanceReportView.swift */; };
 		239B7EDD2D33A5A0008C250D /* RefinedNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239B7EDC2D33A5A0008C250D /* RefinedNoteView.swift */; };
 		239B7EDF2D33A5FD008C250D /* RestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239B7EDE2D33A5FD008C250D /* RestViewModel.swift */; };
-		239B7EE12D33AAF3008C250D /* ScrollPositionPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239B7EE02D33AAF3008C250D /* ScrollPositionPreference.swift */; };
 		239B7EE32D33B8A9008C250D /* WorkspaceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239B7EE22D33B8A9008C250D /* WorkspaceViewModel.swift */; };
+		23AF80B92D3DB6DE001ECD02 /* MetrenomeEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AF80B82D3DB6DE001ECD02 /* MetrenomeEngine.swift */; };
+		23B5F96C2D479149004F4122 /* PitchTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B5F96B2D479149004F4122 /* PitchTestView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,12 +81,18 @@
 		232DBD032D308ADB00CEEF2B /* ClefView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClefView.swift; sourceTree = "<group>"; };
 		232DBD052D308AF700CEEF2B /* TimeSignatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TimeSignatureView.swift; path = "tutorviolin/ScoreDisplay /Signature/TimeSignatureView.swift"; sourceTree = SOURCE_ROOT; };
 		232DBD072D30E72000CEEF2B /* AccidentalsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccidentalsView.swift; sourceTree = "<group>"; };
-		232DBD092D3201CA00CEEF2B /* LedgerLines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LedgerLines.swift; sourceTree = "<group>"; };
 		232DBD0D2D3263A000CEEF2B /* NoteFlagModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteFlagModels.swift; sourceTree = "<group>"; };
+		232E3A3E2D3CB97D004C17E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		232E3A3F2D3CBA69004C17E9 /* ARKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ARKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.2.sdk/System/Library/Frameworks/ARKit.framework; sourceTree = DEVELOPER_DIR; };
+		232E3A412D3CBA79004C17E9 /* SceneKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SceneKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.2.sdk/System/Library/Frameworks/SceneKit.framework; sourceTree = DEVELOPER_DIR; };
+		232E3A432D3CBA94004C17E9 /* Vision.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Vision.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.2.sdk/System/Library/Frameworks/Vision.framework; sourceTree = DEVELOPER_DIR; };
+		232E3A462D3CBC99004C17E9 /* RhythmTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RhythmTestView.swift; sourceTree = "<group>"; };
+		232E3A482D3CBCC5004C17E9 /* PerformanceReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformanceReportView.swift; sourceTree = "<group>"; };
 		239B7EDC2D33A5A0008C250D /* RefinedNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefinedNoteView.swift; sourceTree = "<group>"; };
 		239B7EDE2D33A5FD008C250D /* RestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestViewModel.swift; sourceTree = "<group>"; };
-		239B7EE02D33AAF3008C250D /* ScrollPositionPreference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollPositionPreference.swift; sourceTree = "<group>"; };
 		239B7EE22D33B8A9008C250D /* WorkspaceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkspaceViewModel.swift; sourceTree = "<group>"; };
+		23AF80B82D3DB6DE001ECD02 /* MetrenomeEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetrenomeEngine.swift; sourceTree = "<group>"; };
+		23B5F96B2D479149004F4122 /* PitchTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PitchTestView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,7 +100,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				232E3A422D3CBA79004C17E9 /* SceneKit.framework in Frameworks */,
+				232E3A402D3CBA69004C17E9 /* ARKit.framework in Frameworks */,
 				232DBCB52D2D237500CEEF2B /* AVFoundation.framework in Frameworks */,
+				232E3A442D3CBA94004C17E9 /* Vision.framework in Frameworks */,
 				232DBCB22D2D237300CEEF2B /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -117,6 +131,10 @@
 		232DBC862D2C10B100CEEF2B /* tutorviolin */ = {
 			isa = PBXGroup;
 			children = (
+				23B5F96A2D47913E004F4122 /* PitchTesting */,
+				232E3A452D3CBC87004C17E9 /* RhythmTesting */,
+				232E3A3E2D3CB97D004C17E9 /* Info.plist */,
+				232E3A362D3CB862004C17E9 /* BowTracking */,
 				232DBC9C2D2C10EE00CEEF2B /* Workspace */,
 				232DBCA22D2C113600CEEF2B /* Authentication */,
 				232DBCE62D2D34C100CEEF2B /* ScoreDisplay  */,
@@ -170,6 +188,9 @@
 		232DBCAD2D2D235F00CEEF2B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				232E3A432D3CBA94004C17E9 /* Vision.framework */,
+				232E3A412D3CBA79004C17E9 /* SceneKit.framework */,
+				232E3A3F2D3CBA69004C17E9 /* ARKit.framework */,
 				232DBCB02D2D236700CEEF2B /* AudioToolbox.framework */,
 				232DBCAE2D2D236000CEEF2B /* AVFoundation.framework */,
 			);
@@ -200,10 +221,8 @@
 				232DBCD82D2D26DB00CEEF2B /* PianoKeyboardView.swift */,
 				239B7EDC2D33A5A0008C250D /* RefinedNoteView.swift */,
 				232DBCDA2D2D26F900CEEF2B /* StaffView.swift */,
-				239B7EE02D33AAF3008C250D /* ScrollPositionPreference.swift */,
 				232DBD0D2D3263A000CEEF2B /* NoteFlagModels.swift */,
 				239B7EDE2D33A5FD008C250D /* RestViewModel.swift */,
-				232DBD092D3201CA00CEEF2B /* LedgerLines.swift */,
 			);
 			path = ScoreInterfaceView;
 			sourceTree = "<group>";
@@ -292,6 +311,31 @@
 			path = TimeSignatureView;
 			sourceTree = "<group>";
 		};
+		232E3A362D3CB862004C17E9 /* BowTracking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = BowTracking;
+			sourceTree = "<group>";
+		};
+		232E3A452D3CBC87004C17E9 /* RhythmTesting */ = {
+			isa = PBXGroup;
+			children = (
+				232E3A462D3CBC99004C17E9 /* RhythmTestView.swift */,
+				23AF80B82D3DB6DE001ECD02 /* MetrenomeEngine.swift */,
+				232E3A482D3CBCC5004C17E9 /* PerformanceReportView.swift */,
+			);
+			path = RhythmTesting;
+			sourceTree = "<group>";
+		};
+		23B5F96A2D47913E004F4122 /* PitchTesting */ = {
+			isa = PBXGroup;
+			children = (
+				23B5F96B2D479149004F4122 /* PitchTestView.swift */,
+			);
+			path = PitchTesting;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -362,18 +406,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23B5F96C2D479149004F4122 /* PitchTestView.swift in Sources */,
 				239B7EDF2D33A5FD008C250D /* RestViewModel.swift in Sources */,
 				232DBD082D30E72000CEEF2B /* AccidentalsView.swift in Sources */,
 				232DBCE02D2D2B4F00CEEF2B /* KeySignature.swift in Sources */,
+				23AF80B92D3DB6DE001ECD02 /* MetrenomeEngine.swift in Sources */,
 				232DBCF22D2D371D00CEEF2B /* NoteDurationButton.swift in Sources */,
+				232E3A472D3CBC99004C17E9 /* RhythmTestView.swift in Sources */,
 				232DBCCF2D2D264900CEEF2B /* WorkspaceModel.swift in Sources */,
 				232DBCDB2D2D26F900CEEF2B /* StaffView.swift in Sources */,
 				239B7EE32D33B8A9008C250D /* WorkspaceViewModel.swift in Sources */,
 				232DBCDE2D2D2ADA00CEEF2B /* Clef.swift in Sources */,
-				232DBD0A2D3201CA00CEEF2B /* LedgerLines.swift in Sources */,
 				232DBCD92D2D26DB00CEEF2B /* PianoKeyboardView.swift in Sources */,
 				232DBD062D308AF700CEEF2B /* TimeSignatureView.swift in Sources */,
-				239B7EE12D33AAF3008C250D /* ScrollPositionPreference.swift in Sources */,
 				232DBCA62D2C114B00CEEF2B /* LoginView.swift in Sources */,
 				239B7EDD2D33A5A0008C250D /* RefinedNoteView.swift in Sources */,
 				232DBCEC2D2D36C600CEEF2B /* MusicalNote.swift in Sources */,
@@ -389,6 +434,7 @@
 				232DBCD12D2D268000CEEF2B /* KeySignatureSelector.swift in Sources */,
 				232DBC882D2C10B100CEEF2B /* tutorviolinApp.swift in Sources */,
 				232DBD0E2D3263A000CEEF2B /* NoteFlagModels.swift in Sources */,
+				232E3A492D3CBCC5004C17E9 /* PerformanceReportView.swift in Sources */,
 				232DBD042D308ADB00CEEF2B /* ClefView.swift in Sources */,
 				232DBCC42D2D243000CEEF2B /* ScoreAudioEngine.swift in Sources */,
 				232DBCE22D2D2B7100CEEF2B /* KeySignatureView.swift in Sources */,
@@ -526,6 +572,8 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = tutorviolin/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "\"This app uses the camera to track bow movements\"";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -564,6 +612,8 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = tutorviolin/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "\"This app uses the camera to track bow movements\"";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;

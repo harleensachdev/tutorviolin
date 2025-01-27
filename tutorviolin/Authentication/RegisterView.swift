@@ -8,12 +8,17 @@
 import SwiftUI
 
 struct RegistrationView: View {
+    @StateObject private var workspaceVM = WorkspaceViewModel()
     @State private var email = ""
     @State private var username = ""
     @State private var password = ""
     @State private var confirmPassword = ""
     @Environment(\.dismiss) var dismiss
     @State private var showWorkspace = false
+    @State private var showingARBowTracker = false
+    @State private var showingRhythmTest = false
+    @State private var selectedScore: Score?
+    @State private var path = NavigationPath()
     
     var body: some View {
         VStack(spacing: 24) {
@@ -82,11 +87,15 @@ struct RegistrationView: View {
             Spacer()
         }
         .navigationDestination(isPresented: $showWorkspace) {
-            WorkspaceView()
-        }
+            WorkspaceView(
+                workspaceVM: workspaceVM,
+                showingRhythmTest: $showingRhythmTest,
+                selectedScore: $selectedScore,
+                path: $path
+            )            }
     }
-}
-
+        }
+    
 
 #Preview {
     RegistrationView()

@@ -9,11 +9,12 @@ struct StaffView: View {
     @Binding var keySignature: KeySignature
     @Binding var clef: Clef
     @Binding var timeSignature: TimeSignature
+    @State private var scrollOffset: CGFloat = 0
     
     let notes: [MusicalNote]
     @State private var currentPage: Int = 0
     @State private var scrollPosition: CGFloat = 0
-
+    
     // Refined measurements
     private let staffLineSpacing: CGFloat = 6.5
     private let noteHeadWidth: CGFloat = 7.5
@@ -77,25 +78,6 @@ struct StaffView: View {
         return max(pageWidth, leftMargin + notesWidth + 100)
     }
     
-    // Calculate number of pages
-    private var totalPages: Int {
-        let notesPerPageWidth = (visibleWidth / horizontalSpacing).rounded(.down)
-        return max(1, Int(ceil(Double(notes.count) / Double(notesPerPageWidth))))
-    }
-    
-    // Calculate the start and end indices for the current page
-    private var currentPageIndices: (start: Int, end: Int) {
-        let notesPerPageWidth = Int((visibleWidth / horizontalSpacing).rounded(.down))
-        let start = currentPage * notesPerPageWidth
-        let end = min(start + notesPerPageWidth, notes.count)
-        return (start, end)
-    }
-    
-    // Calculate scroll offset for current page
-    private var pageScrollOffset: CGFloat {
-        let notesPerPageWidth = (visibleWidth / horizontalSpacing).rounded(.down)
-        return CGFloat(currentPage) * (notesPerPageWidth * horizontalSpacing)
-    }
     
     
     // Calculate bar line positions
@@ -189,6 +171,8 @@ struct StaffView: View {
         
         return ledgerLines
     }
+    @Namespace private var scrollSpace
+    
     var body: some View {
         VStack {
             ScrollViewReader { proxy in
@@ -265,36 +249,48 @@ struct StaffView: View {
                     }
                     .frame(height: 80)
                     .frame(width: max(UIScreen.main.bounds.width, CGFloat(notes.count) * horizontalSpacing + leftMargin + 100))
+                    .id(scrollSpace)
+                    
                     
                 }
                 
-                // Save Dialog Sheet
-                
+                .onChange(of: notes.count) { oldCount, newCount in
+                    if newCount == 0 {
+                        // When all notes are removed, scroll back to the start
+                        withAnimation(.easeInOut(duration: 0.3)) {
+                            scrollOffset = 0
+                            proxy.scrollTo("note0", anchor: .leading)
+                        }
+                    } else if newCount > oldCount {
+                        // Handle adding notes as before
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
+                            let newNotePosition = CGFloat(newCount - 1) * horizontalSpacing + leftMargin
                             
-                                .onChange(of: notes.count) { state, newCount in
-                                    if newCount > 0 {
-                                        withAnimation {
-                                            proxy.scrollTo("note\(newCount - 1)", anchor: .trailing)
-                                        }
-                                    }
+                            withAnimation(.easeInOut(duration: 0.3)) {
+                                if newCount < 9 {
+                                    // For the first note, stay at the beginning
+                                    scrollOffset = 0
+                                    proxy.scrollTo("note0", anchor: .leading)
+                                } else {
+                                    // For subsequent notes, scroll to show the new note
+                                    scrollOffset = max(0, newNotePosition - UIScreen.main.bounds.width + horizontalSpacing * 0.5)
+                                    proxy.scrollTo("note\(newCount - 1)", anchor: .trailing)
                                 }
-                                .onChange(of: currentPage) { state, newPage in
-                                    withAnimation(.easeInOut(duration: 0.3)) {
-                                        let noteIndex = min(newPage * Int(visibleWidth / horizontalSpacing), notes.count - 1)
-                                        if noteIndex >= 0 {
-                                            proxy.scrollTo("note\(noteIndex)", anchor: .leading)
-                                        }
-                                    }
-                                }
-                            
-                            
-                            // Navigation controls (keep existing navigation controls code)
-                        
+                                
+                            }
+                        }
                     }
                 }
-                
             }
         }
+    }
+}
+struct ViewOffsetKey: PreferenceKey {
+    static var defaultValue: CGFloat = 0
+    static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) {
+        value = nextValue()
+    }
+}
 
 
 // Extension to help with note type checking

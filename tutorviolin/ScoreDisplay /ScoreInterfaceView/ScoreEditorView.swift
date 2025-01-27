@@ -161,7 +161,9 @@ struct ScoreEditorView: View {
             duration: selectedDuration,
             position: Double(notes.count)
         )
-        notes.append(newNote)
+        withAnimation {
+            notes.append(newNote)
+        }
         ScoreAudioEngine.shared.playNote(pitch: pitch)
     }
     
@@ -171,6 +173,8 @@ struct ScoreEditorView: View {
             duration: selectedDuration,
             position: Double(notes.count)
         )
-        notes.append(newRest)
+        withAnimation {
+            notes.append(newRest)
+        }
     }
 }
